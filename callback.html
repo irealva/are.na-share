@@ -1,0 +1,54 @@
+<!DOCTYPE html public>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Are.na PWA Share">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Are.na Share</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+var url = new URL(window.location.toString());
+var code = url.searchParams.get('code');
+// console.log(code);
+
+if (code !== null) {
+    var data = {
+        code: code
+    };
+
+    var endpoint = 'https://us-central1-arena-share.cloudfunctions.net/arena-access-token';
+
+    fetch(endpoint, {
+            method: "POST", // *GET, POST, PUT, DELETE, etc.
+            // mode: "no-cors", // no-cors, cors, *same-origin
+            // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            // credentials: "same-origin", // include, same-origin, *omit
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                // "Content-Type": "application/x-www-form-urlencoded",
+            },
+            // redirect: "follow", // manual, *follow, error
+            // referrer: "client", // no-referrer, *client
+            body: JSON.stringify(data), // body data type must match "Content-Type" header
+        })
+        .then(response => {
+            return response.json();
+        }) // parses response to JSON
+        .then((myJson) => {
+            //console.log(myJson);
+
+            var newUrl = "./arena.html?access_token=" + myJson.access_token;
+            // var newUrl = "./arena.html"
+
+            window.location.replace(newUrl);
+        })
+        .catch(error => console.error(error));
+}
+</script>
+
+</html>

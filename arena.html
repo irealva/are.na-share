@@ -1,0 +1,47 @@
+<!DOCTYPE html public>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Are.na PWA Share">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Are.na Share</title>
+    <link rel="manifest" href="./manifest.json">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.2/qs.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
+</head>
+
+<body>
+    <h2>Are.na Share</h2>
+    <input type="arena-id" id="arena-id" name="arena-id" style="display:none;" required />
+    <button id="login-btn" style="display:none;">
+        Log In
+    </button>
+    <button id="logout-btn" style="display:none;">
+        Log Out
+    </button>
+    <p>You shared:</p>
+    <div>Title</div>
+    <textarea id="share-title" rows="4" cols="50"></textarea>
+    <br>
+
+    <div>Text</div>
+    <textarea id="share-description" rows="4" cols="50"></textarea>
+    <br>
+
+    <div id="share-url"></div>
+    <br>
+
+    <select id="dropdown"></select>
+    <button id="add-btn">
+        Add
+    </button>
+    <div id="success" style="display:none;">Success</div>
+    <script type="text/javascript" src="./js/arenaAPI.js"></script>
+    <script type="text/javascript" src="./js/arena.js"></script>
+</body>
+
+</html>
