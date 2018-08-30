@@ -1,0 +1,129 @@
+html,
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	/*justify-content: space-around;*/
+	height: 100%;
+}
+
+section {
+    display: flex;
+	flex-direction: column;
+	/*flex-wrap: wrap;*/
+
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.footer {
+	/*position: fixed;*/
+	/*bottom: 0;*/
+	justify-content: center;
+	font-style: bold;
+	color: #6D6D6D;
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+#header {
+	color: #999999;
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.title-section {
+	margin-top: 20px;
+}
+
+#logout-btn {
+	font-weight: bold;
+	font-size: 12px;
+	color: #CCCCCC;
+	border-color: #CCCCCC;
+	background-color: transparent;
+	border-style: solid;
+	border-radius: 3px;
+	outline: none;
+}
+
+#login-btn {
+	color: #6D6D6D;
+	font-style: bold;
+	font-size: 16px;
+}
+
+#add-btn {
+	border-top-color: #D5D5D5;
+	border-bottom-color: transparent;
+	border-right-color: transparent;
+	border-left-color: transparent;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    outline: none;
+    height: 40px;
+}
+
+.label {
+	color: #999999;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.input {
+	margin-bottom: 24px;
+	width: 100%;
+}
+
+input:focus, textarea:focus,
+keygen:focus, select:focus {
+  outline-offset: 0;
+  /*width: 100%;*/
+  outline: none;
+}
+
+.input-text {
+	outline: none;
+	background-color: #F0F0F0;
+	border-color: #9999997d;
+	resize: none;
+	width: 100%;
+
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #585858;
+	font-size: 16px;
+	padding: 10px;
+}
+
+/*
+.dropdown-container:before {
+	content: "";
+    position: absolute;
+    right: 50px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #585858;
+    margin-top: 18px;
+}
+*/
+
+#share-url {
+	height: 40px;
+}
+
+#share-description {
+	height: 80px;
+} 

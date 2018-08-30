@@ -8,38 +8,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Are.na Share</title>
     <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" type="text/css" href="css/arena.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.svg" alt="logo">
+        <button id="logout-btn" style="display:none;">
+            Log Out
+        </button>
+    </header>
+    <main>
+        <section class='title-section'>
+            <h2 id='header'>Are.na Share</h2>
+        </section>
+        <section>
+            <input type="arena-id" id="arena-id" name="arena-id" style="display:none;" required />
+            <button id="login-btn" style="display:none;">
+                Log In
+            </button>
+            <div class='input'>
+                <div class='label'>Title</div>
+                <textarea id="share-title" class='input-text'></textarea>
+            </div>
+            <div class='input'>
+                <div class='label'>Text</div>
+                <textarea id='share-description' class='input-text'></textarea>
+            </div>
+            <div class='input'>
+                <div class='label'>Url</div>
+                <textarea id="share-url" class='input-text'></textarea>
+            </div>
+            <div class='input'>
+                <div class='label'>Channel</div>
+                <div class='dropdown-container'>
+                    <select id="dropdown" class='input-text'></select>
+                </div>
+            </div>
+        </section>
+        <section class='footer'>
+            <button id="add-btn">
+                Add
+            </button>
+            <div id="success" style="display:none;">Success</div>
+        </section>
+    </main>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.2/qs.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
-</head>
-
-<body>
-    <h2>Are.na Share</h2>
-    <input type="arena-id" id="arena-id" name="arena-id" style="display:none;" required />
-    <button id="login-btn" style="display:none;">
-        Log In
-    </button>
-    <button id="logout-btn" style="display:none;">
-        Log Out
-    </button>
-    <p>You shared:</p>
-    <div>Title</div>
-    <textarea id="share-title" rows="4" cols="50"></textarea>
-    <br>
-
-    <div>Text</div>
-    <textarea id="share-description" rows="4" cols="50"></textarea>
-    <br>
-
-    <div id="share-url"></div>
-    <br>
-
-    <select id="dropdown"></select>
-    <button id="add-btn">
-        Add
-    </button>
-    <div id="success" style="display:none;">Success</div>
     <script type="text/javascript" src="./js/arenaAPI.js"></script>
     <script type="text/javascript" src="./js/arena.js"></script>
 </body>

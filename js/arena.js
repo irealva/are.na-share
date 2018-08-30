@@ -74,9 +74,11 @@ class Arena {
         this.addBtnEl.addEventListener('click', (e) => {
             const dropdownValue = this.dropdownEl.options[this.dropdownEl.selectedIndex].value;
             const channelSlug = this.channels[dropdownValue].slug;
-            console.log("Addding to channel: ", channelSlug);
 
-            this.addBlock(channelSlug);
+            if (this.urlToAdd != "null") {
+                console.log("Addding to channel: ", channelSlug);
+                this.addBlock(channelSlug);
+            }            
         });
     }
 
