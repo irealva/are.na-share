@@ -13,20 +13,25 @@
 
 <body>
     <header>
-        <img src="images/logo.svg" alt="logo">
-        <button id="logout-btn" style="display:none;">
-            Log Out
+        <img id='logo' src="images/logo.svg" alt="logo">
+        <button class='button' id="logout-btn" style="display:none;">
+            Logout
         </button>
     </header>
     <main>
         <section class='title-section'>
             <h2 id='header'>Are.na Share</h2>
         </section>
-        <section>
-            <input type="arena-id" id="arena-id" name="arena-id" style="display:none;" required />
-            <button id="login-btn" style="display:none;">
-                Log In
+        <section id='login-section' style="display:none;">
+            <div class='input'>
+                <div class='label'>Are.na ID</div>
+                <textarea id="arena-id" class='input-text'></textarea>
+            </div>
+            <button class='button' id="login-btn">
+                Login
             </button>
+        </section>
+        <section id='add-section'>
             <div class='input'>
                 <div class='label'>Title</div>
                 <textarea id="share-title" class='input-text'></textarea>
@@ -46,13 +51,12 @@
                 </div>
             </div>
         </section>
-        <section class='footer'>
-            <button id="add-btn">
-                Add
-            </button>
-            <div id="success" style="display:none;">Success</div>
-        </section>
     </main>
+    <section class='footer'>
+        <button id="add-btn">
+            Add
+        </button>
+    </section>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.2/qs.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

@@ -40,12 +40,14 @@ class Arena {
         this.channels = [];
 
         // UI buttons
+        this.loginSectionEl = document.querySelector('#login-section');
+        this.addSectionEl = document.querySelector('#add-section');
+        this.footerSectionEl = document.querySelector('.footer');
         this.arenaIdEl = document.querySelector('#arena-id');
         this.loginBtnEl = document.querySelector('#login-btn');
         this.logoutBtnEl = document.querySelector('#logout-btn');
         this.addBtnEl = document.querySelector('#add-btn');
         this.dropdownEl = document.querySelector('#dropdown');
-        this.successEl = document.querySelector('#success');
         // UI text
         this.shareUrlEl = document.querySelector('#share-url');
         this.shareTitleEl = document.querySelector('#share-title');
@@ -75,7 +77,12 @@ class Arena {
             const dropdownValue = this.dropdownEl.options[this.dropdownEl.selectedIndex].value;
             const channelSlug = this.channels[dropdownValue].slug;
 
+            // update url value to whatever is in the text field
+            this.urlToAdd = this.shareUrlEl.value;
+
             if (this.urlToAdd != "null") {
+                this.updateAddButtonActive();
+
                 console.log("Addding to channel: ", channelSlug);
                 this.addBlock(channelSlug);
             }            
@@ -83,7 +90,7 @@ class Arena {
     }
 
     setUrlParameters() {
-        this.shareUrlEl.innerHTML = 'URL: ' + this.urlToAdd;
+        this.shareUrlEl.innerHTML = this.urlToAdd;
         this.shareTitleEl.value = this.titleToAdd;
         this.shareDescriptionEl.value = this.descriptionToAdd;
     }
@@ -91,12 +98,10 @@ class Arena {
     showLogin(show) {
         if (show) {
             this.showLogout(false);
-            this.loginBtnEl.style.display = 'block';
-            this.arenaIdEl.style.display = 'block';
+            this.loginSectionEl.style.display = 'flex';
         }
         else {
-            this.loginBtnEl.style.display = 'none';
-            this.arenaIdEl.style.display = 'none';
+            this.loginSectionEl.style.display = 'none';
         }
         
     }
@@ -104,9 +109,13 @@ class Arena {
     showLogout(show) {
         if (show) {
             this.logoutBtnEl.style.display = 'block';
+            this.addSectionEl.style.display = 'flex';
+            this.footerSectionEl.style.display = 'flex';
         }
         else {
             this.logoutBtnEl.style.display = 'none';
+            this.addSectionEl.style.display = 'none';
+            this.footerSectionEl.style.display = 'none';
         }
         
     }
@@ -212,7 +221,7 @@ class Arena {
                     description: this.shareDescriptionEl.value
                 });
 
-                this.updateUIBlockAdded();
+                this.updateAddButtonSuccess();
             })
             .catch(error => {
                 alert("Block insert failed");
@@ -220,8 +229,19 @@ class Arena {
             });
     }
 
-    updateUIBlockAdded() {
-        this.successEl.style.display = 'block';
+    updateAddButtonActive() {
+        this.addBtnEl.innerText = "Adding...";
+        this.addBtnEl.style.color = '#D5D5D5';
+    }
+
+    updateAddButtonSuccess() {
+        this.addBtnEl.innerText = "Success";
+        window.setTimeout(this.updateAddButtonInactive.bind(this), 1000);
+    }
+
+    updateAddButtonInactive() {
+        this.addBtnEl.innerText = "Add";
+        this.addBtnEl.style.color = '#999999';
     }
 }
 
