@@ -52,8 +52,13 @@ section {
 	min-height: 80px;
 }
 
-.add-section {
+#login-section {
+	padding-top: 10px;
+}
+
+#add-section {
 	min-height: 365px;
+	padding-top: 10px;
 }
 
 .button {

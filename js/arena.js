@@ -205,6 +205,7 @@ class Arena {
             let el = document.createElement("option");
             el.textContent = this.channels[j].title;
             el.value = j;
+            el.style.color = 'red';
             this.dropdownEl.appendChild(el);
         }
     }
@@ -224,7 +225,7 @@ class Arena {
                 this.updateAddButtonSuccess();
             })
             .catch(error => {
-                alert("Block insert failed");
+                this.updateAddButtonFailure();
                 console.log(error);
             });
     }
@@ -236,6 +237,12 @@ class Arena {
 
     updateAddButtonSuccess() {
         this.addBtnEl.innerText = "Success";
+        window.setTimeout(this.updateAddButtonInactive.bind(this), 1000);
+    }
+
+    updateAddButtonFailure() {
+        this.addBtnEl.innerText = "Error";
+        this.addBtnEl.style.color = '#ff6961';
         window.setTimeout(this.updateAddButtonInactive.bind(this), 1000);
     }
 

@@ -38,6 +38,7 @@ class ArenaAPI {
         .then(({data}) => data)
         .catch(error => {
           console.log("Could not create Arena API");
+          console.log(error);
           callback(true);
         })
     );
