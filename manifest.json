@@ -17,11 +17,12 @@
       "type": "image/png"
     }],
   "share_target": {
-        "url_template": "arena.html?title={title}&url={url}&text={text}",
+        "url_template": "arena.html?title={title}&text={text}&url={url}",
+        "action": "arena.html",
         "params": {
           "title": "title",
-          "url": "url",
-          "text": "text"
+          "text": "text",
+          "url": "url"
         }
   }
 }
