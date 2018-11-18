@@ -29,8 +29,10 @@ class Arena {
         // Url parameters
         this.arenaID = localStorage.getItem('id');;
         this.titleToAdd = url.searchParams.get('title');
-        this.descriptionToAdd = url.searchParams.get('text'); // not getting url, getting as text
-        this.urlToAdd = encodeURIComponent(url.searchParams.get('url')); // not getting url, getting as text
+        this.descriptionToAdd = url.searchParams.get('url'); // not getting url, getting as text
+        this.urlToAdd = encodeURIComponent(url.searchParams.get('text')); // not getting url, getting as text
+        console.log("title", this.titleToAdd);
+        console.log("url", this.urlToAdd);
 
         // There might be a new access token so refresh
         this.newAccessToken = encodeURIComponent(url.searchParams.get('access_token'));
