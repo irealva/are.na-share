@@ -28,9 +28,9 @@ class Arena {
     constructor(engine) {
         // Url parameters
         this.arenaID = localStorage.getItem('id');;
-        this.urlToAdd = encodeURIComponent(url.searchParams.get('url')); // not getting url, getting as text
+        this.urlToAdd = encodeURIComponent(url.searchParams.get('text')); // not getting url, getting as text
         this.titleToAdd = url.searchParams.get('title');
-        this.descriptionToAdd = url.searchParams.get('text'); // not getting url, getting as text
+        this.descriptionToAdd = url.searchParams.get('url'); // not getting url, getting as text
 
         // There might be a new access token so refresh
         this.newAccessToken = encodeURIComponent(url.searchParams.get('access_token'));
