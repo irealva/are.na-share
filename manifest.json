@@ -17,7 +17,7 @@
       "type": "image/png"
     }],
   "share_target": {
-        "url_template": "arena.html?title={title}&text={text}&url={url}",
+        "url_template": "arena.html?oldapi=true&title={title}&text={text}&url={url}",
         "action": "arena.html",
         "params": {
           "title": "title",
